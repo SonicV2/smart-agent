@@ -66,19 +66,46 @@ functions:
     handler: lambdas/create-note.handler
     events:
       - http:
-        path: notes/create
-        method: post
-        cors: true
-        authorizer: aws_iam
+          path: notes/create
+          method: post
+          cors: true
+          authorizer: aws_iam
 
   get-note:
     handler: lambdas/get-note.handler
     events:
       - http:
-        path: notes/{id}
-        method: get
-        cors: true
-        authorizer: aws_iam
+          path: notes/id/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
+
+  list-notes:
+    handler: lambdas/list-notes.handler
+    events:
+      - http:
+          path: notes
+          method: get
+          cors: true
+          authorizer: aws_iam
+    
+  update-note:
+    handler: lambdas/update-note.handler
+    events:
+      - http:
+          path: notes/id/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
+
+  delete-note:
+    handler: lambdas/delete-note.handler
+    events:
+      - http:
+          path: notes/id/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
