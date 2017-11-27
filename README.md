@@ -33,20 +33,15 @@ Before you can build and deploy successfully the backend and frontend components
 
 ### Compile And Test Lambdas Locally
 
-Install the [Serverless Framework](https://serverless.com/) by executing:
+Install the [Serverless Framework](https://serverless.com/) and all the required project dependencies by executing:
 ```sh
-npm install -g serverless
+$ npm install -g serverless
+$ npm install
 ```
-
-Execute:
-```sh
-npm install
-```
-to install all the necessary dependencies.
 
 Test the ability to create notes by issuing the following command from the project root folder:
 ```sh
-$ serverless invoke local --function create --path mocks/create-event.json
+$ serverless invoke local --function create-note --path mocks/create-event.json
 ```
 
 Make a note of the `noteId` in the response and update the `pathParameters.id` attribute with its value in these files:
@@ -59,22 +54,22 @@ mocks/
 
 Test the ability to retrieve a note by its id:
 ```sh
-$ serverless invoke local --function get --path mocks/get-event.json
+$ serverless invoke local --function get-note --path mocks/get-event.json
 ```
 
 Test the ability to return a list of all the notes a user has:
 ```sh
-$ serverless invoke local --function list --path mocks/list-event.json
+$ serverless invoke local --function list-notes --path mocks/list-event.json
 ```
 
 Test the ability to update a note with a new note object given its id:
 ```sh
-$ serverless invoke local --function update --path mocks/update-event.json
+$ serverless invoke local --function update-note --path mocks/update-event.json
 ```
 
 Finally, test the ability to delete a given note:
 ```sh
-$ serverless invoke local --function delete --path mocks/delete-event.json
+$ serverless invoke local --function delete-note --path mocks/delete-event.json
 ```
 
 ### Deploy Lambdas to AWS
