@@ -16,9 +16,10 @@ This project was bootstrapped with [Serverless Stack](https://serverless-stack.c
 
 Before you can build and deploy successfully the backend and frontend components, ensure you complete the following operations:
 
-* Download and install `node.js` and `npm` on your local system.
+* Download and install [`node.js`](https://nodejs.org/en/) and `npm` on your local system.
 * Sign up for an [AWS](https://aws.amazon.com) account.
 * Install the [AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/installing.html).
+* [Configure the AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) by running `aws configure` and providing the access key ID and secret access key for an IAM user.
 
 * Clone this repository: `git clone https://github.com/alagala/react-learn-serverless.git`.
 
@@ -49,7 +50,7 @@ Make a note of the `noteId` in the response and update the `pathParameters.id` a
 mocks/
   get-event.json
   update-event.json
-  list-event.json
+  delete-event.json
 ```
 
 Test the ability to retrieve a note by its id:
