@@ -12,8 +12,8 @@ This project was bootstrapped with [Serverless Stack](https://serverless-stack.c
 
 ## Before You Get Started
 
->Note The following instructions assume that you are deploying all backend resources in the AWS Asia Pacific (Singapore) region.
->If this is not the region you want to deploy to, you will have to update the `serverless.yml` project file to the one that works for you.
+> **Note:** The following instructions assume that you are deploying all backend resources in the AWS Asia Pacific (Singapore) region.
+> If this is not the region you want to deploy to, you will have to update the `serverless.yml` project file to the one that works for you.
 
 Before you can build and deploy successfully the backend and frontend components, ensure you complete the following operations:
 
@@ -84,7 +84,7 @@ In those cases where you might want to deploy just a single API, you can run the
 $ serverless deploy function -f list
 ```
 
->Note: The output of the commands above return a list of the API endpoints that were created. Make a note of these endpoints, their IDs and the associated Region, as we are going to use these values later while configuring the frontend.
+> **Note:** The output of the commands above return a list of the API endpoints that were created. Make a note of these endpoints, their IDs and the associated Region, as we are going to use these values later while configuring the frontend.
 
 ## Build The Frontend
 
@@ -96,7 +96,7 @@ Follow these instructions to configure Amazon Cognito, a fully-managed service t
 2. [Create a Cognito Test User](https://serverless-stack.com/chapters/create-a-cognito-test-user.html) that will be used to test the authentication portion of the app.
 3. [Create a Cognito Identity Pool](https://serverless-stack.com/chapters/create-a-cognito-identity-pool.html): once a user is authenticated via the User Pool (which acts as the Identity Provicder), the Identity Pool will attach an IAM Role to the user.
 
->Note: while following the instructions on creating the Cognito Identity Pool, you will create a policy for an IAM Role to grant access to the S3 bucket and the backend API you have built and deployed. In that policy, make sure to replace:
+> **Note:** while following the instructions on creating the Cognito Identity Pool, you will create a policy for an IAM Role to grant access to the S3 bucket and the backend API you have built and deployed. In that policy, make sure to replace:
 * `YOUR_S3_UPLOADS_BUCKET_NAME` with the [bucket name](#setup-the-backend-services) you had previously created; and
 * `YOUR_API_GATEWAY_REGION` and `YOUR_API_GATEWAY_ID` with the ones that you had gotten after you [deployed](#deploy-lambdas-to-aws) the backend API.
 
