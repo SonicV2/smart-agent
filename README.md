@@ -8,6 +8,7 @@ This project was bootstrapped with [Serverless Stack](https://serverless-stack.c
   - [Compile And Test Lambdas Locally](#compile-and-test-lambdas-locally)
   - [Deploy Lambdas to AWS](#deploy-lambdas-to-aws)
 - [Build The Frontend](#build-the-frontend)
+  - [Configure Amazon Cognito](#configure-amazon-cognito)
 
 ## Before You Get Started
 
@@ -29,8 +30,6 @@ Before you can build and deploy successfully the backend and frontend components
 
 1. [Create the DynamoDB table](https://serverless-stack.com/chapters/create-a-dynamodb-table.html) that is going to store the data managed by the application.
 2. [Create the S3 Bucket](https://serverless-stack.com/chapters/create-an-s3-bucket-for-file-uploads.html) that will be used to upload the file attachments managed by the application.
-3. [Create a Cognito User Pool](https://serverless-stack.com/chapters/create-a-cognito-user-pool.html) that will be used to handle user accounts and authentication in a secure and reliable way.
-4. [Create a Cognito Test User](https://serverless-stack.com/chapters/create-a-cognito-test-user.html) that will be used to test the authentication portion of the app.
 
 ### Compile And Test Lambdas Locally
 
@@ -85,6 +84,20 @@ In those cases where you might want to deploy just a single API, you can run the
 $ serverless deploy function -f list
 ```
 
+>Note: The output of the commands above return a list of the API endpoints that were created. Make a note of these endpoints, their IDs and the associated Region, as we are going to use these values later while configuring the frontend.
+
 ## Build The Frontend
 
-TODO
+### Configure Amazon Cognito
+
+Follow these instructions to configure Amazon Cognito, a fully-managed service that is used to easily and securely add sign-up and sign-in functionality to the application.
+
+1. [Create a Cognito User Pool](https://serverless-stack.com/chapters/create-a-cognito-user-pool.html) that will be used to handle user accounts and authentication in a secure and reliable way.
+2. [Create a Cognito Test User](https://serverless-stack.com/chapters/create-a-cognito-test-user.html) that will be used to test the authentication portion of the app.
+3. [Create a Cognito Identity Pool](https://serverless-stack.com/chapters/create-a-cognito-identity-pool.html): once a user is authenticated via the User Pool (which acts as the Identity Provicder), the Identity Pool will attach an IAM Role to the user.
+
+>Note: while following the instructions on creating the Cognito Identity Pool, you will create a policy for an IAM Role to grant access to the S3 bucket and the backend API you have built and deployed. In that policy, make sure to replace:
+* `YOUR_S3_UPLOADS_BUCKET_NAME` with the [bucket name](#setup-the-backend-services) you had previously created; and
+* `YOUR_API_GATEWAY_REGION` and `YOUR_API_GATEWAY_ID` with the ones that you had gotten after you [deployed](#deploy-lambdas-to-aws) the backend API.
+
+TO BE CONTINUED...
