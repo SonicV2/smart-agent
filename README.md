@@ -97,7 +97,13 @@ Follow these instructions to configure Amazon Cognito, a fully-managed service t
 3. [Create a Cognito Identity Pool](https://serverless-stack.com/chapters/create-a-cognito-identity-pool.html): once a user is authenticated via the User Pool (which acts as the Identity Provicder), the Identity Pool will attach an IAM Role to the user.
 
 > **Note:** *while following the instructions on creating the Cognito Identity Pool, you will create a policy for an IAM Role to grant access to the S3 bucket and the backend API you have built and deployed. In that policy, make sure to replace:*
-> * `YOUR_S3_UPLOADS_BUCKET_NAME` with the [bucket name](#setup-the-backend-services) you had previously created; and
-> * `YOUR_API_GATEWAY_REGION` and `YOUR_API_GATEWAY_ID` with the ones that you had gotten after you [deployed](#deploy-lambdas-to-aws) the backend API.
+> * *`YOUR_S3_UPLOADS_BUCKET_NAME` with the [bucket name](#setup-the-backend-services) you had previously created; and*
+> * *`YOUR_API_GATEWAY_REGION` and `YOUR_API_GATEWAY_ID` with the ones that you had gotten after you [deployed](#deploy-lambdas-to-aws) the backend API.*
+
+Execute the following command:
+```sh
+$ cp client-app/src/config.js.TEMPLATE client-app/src/config.js
+```
+and replace `USER_POOL_ID` and `APP_CLIENT_ID` with the values you have obtained by following the previous steps on Amazon Cognito.
 
 TO BE CONTINUED...
