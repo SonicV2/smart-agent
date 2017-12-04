@@ -9,5 +9,8 @@ export default {
     apiGateway: {
         URL: "<YOUR_API_GATEWAY_URL>",
         REGION: "<YOUR_API_GATEWAY_REGION>"
+    },
+    s3: {
+        BUCKET: "<YOUR_S3_UPLOADS_BUCKET_NAME>"
     }
 };
