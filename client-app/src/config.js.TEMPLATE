@@ -1,6 +1,13 @@
 export default {
+    MAX_ATTACHMENT_SIZE: REPALCE_WITH_SIZE_IN_BYTES,
     cognito: {
         USER_POOL_ID: "<YOUR_COGNITO_USER_POOL_ID>",
-        APP_CLIENT_ID: "<YOUR_COGNITO_APP_CLIENT_ID>"
+        APP_CLIENT_ID: "<YOUR_COGNITO_APP_CLIENT_ID>",
+        REGION: "<YOUR_COGNITO_REGION>",
+        IDENTITY_POOL_ID: "<YOUR_IDENTITY_POOL_ID>"
+    },
+    apiGateway: {
+        URL: "<YOUR_API_GATEWAY_URL>",
+        REGION: "<YOUR_API_GATEWAY_REGION>"
     }
 };
